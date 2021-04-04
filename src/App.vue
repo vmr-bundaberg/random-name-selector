@@ -2,9 +2,7 @@
   <div class="p-4 flex flex-col h-3/4 justify-evenly items-center m-auto">
       <div class="py-4">
         <h1 class="text-5xl mb-4 font-bold">Random Name Selector</h1>
-        <button class="px-4 py-2 font-semibold rounded bg-indigo-500 hover:bg-indigo-600 text-white">
-          Edit names
-        </button>
+        <modal-text-editor />
       </div>
       <h2 class="text-4xl font-bold">Christopher Meow</h2>
   </div>
@@ -12,9 +10,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import ModalTextEditor from './components/ModalTextEditor.vue'
 
 export default defineComponent({
   name: 'App',
+  components: {
+    ModalTextEditor,
+  }
 })
 </script>
 
