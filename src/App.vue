@@ -41,8 +41,8 @@ export default defineComponent({
       const timeToStop = Math.random() * (3000 - 100) + 1000
       let index =  0
       for (let i = 0; i < timeToStop; i += 100) {
-        setTimeout(() => {
-          selectedName.value = copiedNameList[i % copiedNameList.length]
+        setTimeout((): void => {
+          selectedName.value = copiedNameList[(i / 100) % copiedNameList.length]
         }, i)
       }
     }
