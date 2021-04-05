@@ -6,7 +6,7 @@
         <div :class="`modal ${isOpen && 'modal-open'}`">
             <div class="m-auto w-3/4 min-h-1/4 flex flex-col items-center p-4 bg-white">
                <label class="text-left self-start my-2">Insert names here (seperate by newline)</label>
-               <textarea rows="10" v-model="rawNames" class="border p-2 w-full" />
+               <textarea :rows="10" v-model="rawNames" class="border p-2 w-full" />
                <Button @click="closeAndSave" color="green" class="mt-4">Save</Button>
             </div>
         </div>
