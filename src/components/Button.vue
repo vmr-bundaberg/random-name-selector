@@ -1,5 +1,5 @@
 <template>
-    <button :class="`button button-${color}`">
+    <button :class="`button button-${color}`" :disabled="disabled">
         <slot></slot>
     </button>
 </template>
@@ -12,6 +12,10 @@ export default defineComponent({
         color: {
             type: String,
             default: 'blue'
+        },
+        disabled: {
+            type: Boolean,
+            default: false
         }
     },
     setup() {
@@ -31,6 +35,9 @@ export default defineComponent({
     }
     &-blue {
         @apply bg-blue-500 hover:bg-blue-600;
+    }
+    &:disabled {
+        @apply bg-red-400 bg-opacity-30 cursor-not-allowed;
     }
 }
 </style>
