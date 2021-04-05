@@ -6,9 +6,9 @@
       </div>
       <div class="py-4">
         <h2 class="text-4xl font-bold mb-4">Christopher Meow</h2>
-        <button class="py-2 px-4 rounded bg-blue-500 hover:bg-blue-600 text-white font-bold">
+        <Button>
           Random name
-        </button>
+        </Button>
       </div>
   </div>
 </template>
@@ -16,11 +16,13 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import ModalTextEditor from './components/ModalTextEditor.vue'
+import Button from './components/Button.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     ModalTextEditor,
+    Button,
   },
   setup() {
     const names = ref("")
