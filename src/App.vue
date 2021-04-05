@@ -33,8 +33,8 @@ export default defineComponent({
   },
   setup() {
     const names = ref("")
-    const nameList = computed(() => names.value.split('\n'))
-    const selectedName = ref("Jonathan Joestar")
+    const nameList = computed(() => names.value.trim().split('\n'))
+    const selectedName = ref("Random it first")
     const randomName = () => {
       const copiedNameList = [...nameList.value]
       shuffleArray(copiedNameList)
