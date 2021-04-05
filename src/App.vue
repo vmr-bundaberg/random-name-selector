@@ -2,20 +2,33 @@
   <div class="p-4 flex flex-col h-3/4 justify-evenly items-center m-auto">
       <div class="py-4">
         <h1 class="text-5xl mb-4 font-bold">Random Name Selector</h1>
-        <modal-text-editor />
+        <modal-text-editor v-model="names" />
       </div>
-      <h2 class="text-4xl font-bold">Christopher Meow</h2>
+      <div class="py-4">
+        <h2 class="text-4xl font-bold mb-4">Christopher Meow</h2>
+        <button class="py-2 px-4 rounded bg-blue-500 hover:bg-blue-600 text-white font-bold">
+          Random name
+        </button>
+      </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import ModalTextEditor from './components/ModalTextEditor.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     ModalTextEditor,
+  },
+  setup() {
+    const names = ref("")
+    const nameList = computed(() => names.value.split('\n'))
+    return {
+      names,
+      nameList
+    }
   }
 })
 </script>
@@ -32,5 +45,9 @@ html, body {
   color: #2c3e50;
   height: 100%;
   display: flex;
+}
+
+function ref(arg0: string) {
+  throw new Error('Function not implemented.')
 }
 </style>
