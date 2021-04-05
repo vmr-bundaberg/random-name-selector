@@ -42,7 +42,7 @@ export default defineComponent({
       let index =  0
       for (let i = 0; i < timeToStop; i += 100) {
         setTimeout(() => {
-          selectedName.value = copiedNameList[(i /100) % copiedNameList.length]
+          selectedName.value = copiedNameList[i % copiedNameList.length]
         }, i)
       }
     }
