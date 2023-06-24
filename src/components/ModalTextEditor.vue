@@ -51,7 +51,6 @@ export default defineComponent({
 })
 </script>
 
-
 <style scoped>
 .modal {
     @apply absolute top-0 left-0 w-full h-full bg-gray-800 bg-opacity-40 hidden;

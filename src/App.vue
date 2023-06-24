@@ -1,14 +1,20 @@
 <template>
   <div class="p-4 flex flex-col h-3/4 justify-evenly items-center m-auto">
       <div class="py-4">
-        <h1 class="text-5xl mb-4 font-bold">Random Name Selector</h1>
-        <modal-text-editor v-model="names" />
+        <img src="./assets/sig-vmr.png">
+      </div>
+      <div class="py-4">
+        <h1 class="text-5xl mb-4 font-bold">VMR Bundaberg</h1>
+        <h1 class="text-5xl mb-4 font-bold">Fishing Classic Prize Draw</h1>
       </div>
       <div class="py-4">
         <h2 class="text-4xl font-bold mb-4">{{ selectedName }}</h2>
         <Button @click="randomName" :disabled="names.length === 0">
           Randomize Name
         </Button>
+      </div>
+      <div class="py-4">
+        <modal-text-editor v-model="names" />
       </div>
   </div>
 </template>
@@ -34,7 +40,7 @@ export default defineComponent({
   setup() {
     const names = ref("")
     const nameList = computed(() => names.value.trim().split('\n'))
-    const selectedName = ref("Random it first")
+    const selectedName = ref("Add Names First")
     const randomName = () => {
       const copiedNameList = [...nameList.value]
       shuffleArray(copiedNameList)
