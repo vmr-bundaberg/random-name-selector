@@ -10,7 +10,7 @@
       <div class="py-4">
         <h2 class="text-4xl font-bold mb-4">{{ selectedName }}</h2>
         <Button @click="randomName" :disabled="names.length === 0">
-          Randomize Name
+          Find The Winner
         </Button>
       </div>
       <div class="py-4">
@@ -40,7 +40,7 @@ export default defineComponent({
   setup() {
     const names = ref("")
     const nameList = computed(() => names.value.trim().split('\n'))
-    const selectedName = ref("Add Names First")
+    const selectedName = ref("Winner Will Appear Here")
     const randomName = () => {
       const copiedNameList = [...nameList.value]
       shuffleArray(copiedNameList)
